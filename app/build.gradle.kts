@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.android.burgerking1112app"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.android.burgerking1112app"
