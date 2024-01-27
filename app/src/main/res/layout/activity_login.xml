@@ -22,28 +22,16 @@
         app:layout_constraintVertical_bias="0.13" />
 
     <TextView
-        android:id="@+id/tvWelcome_description_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvWelcomeBack"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvWelcomeBack"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeBack"
-        tools:text="Explore and enjoy awesome deals and food " />
-
-    <TextView
         android:id="@+id/tcvWelcome_description_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="16dp"
         android:text="from all our brands!"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvWelcome_description_1"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvWelcome_description_1"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome_description_1" />
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/tvSignupHere"
@@ -59,24 +47,23 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="60dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="52dp"
         android:backgroundTint="#028F46"
         android:text="Log In"
         android:textSize="16sp"
         app:iconPadding="10dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="20dp"
         android:contextClickable="true"
         android:ems="10"
         android:hint="Email Address"
@@ -90,7 +77,7 @@
 
     <EditText
         android:id="@+id/editTextTextPassword2"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="15dp"
         android:ems="10"
@@ -103,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvForgetPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="227dp"
@@ -111,12 +98,13 @@
         android:text="Forgot your password?"
         android:textColor="#028F46"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
 
     <Button
         android:id="@+id/btnLoginApple"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="60dp"
         android:backgroundTint="#1877F2"
@@ -129,5 +117,17 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Explore and enjoy awesome deals and food"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvWelcomeBack"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvWelcomeBack"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeBack" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
