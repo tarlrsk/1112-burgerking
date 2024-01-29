@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".SignUpActivity">
 
     <TextView
         android:id="@+id/tvCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:text="Welcome Back!"
+        android:text="Create Your Account"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,26 +38,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Sign up here"
+        android:text="Sign in here"
         android:textColor="#028F46"
         app:layout_constraintEnd_toEndOf="@+id/tvExplore2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvExplore2"
         app:layout_constraintTop_toBottomOf="@+id/tvExplore2" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="360dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="52dp"
-        android:backgroundTint="#028F46"
-        android:text="Log In"
-        android:textSize="16sp"
-        app:iconPadding="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
-        app:layout_constraintHorizontal_bias="0.39"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
 
     <EditText
         android:id="@+id/tvSignupEmail"
@@ -89,34 +75,20 @@
         app:layout_constraintStart_toStartOf="@+id/tvSignupEmail"
         app:layout_constraintTop_toBottomOf="@+id/tvSignupEmail" />
 
-    <TextView
-        android:id="@+id/tvForgetPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="227dp"
-        android:layout_marginTop="10dp"
-        android:text="Forgot your password?"
-        android:textColor="#028F46"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
-
     <Button
         android:id="@+id/btnLoginFacebook"
         android:layout_width="360dp"
         android:layout_height="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#1877F2"
         android:text="Continue with Facebook"
         android:textSize="16sp"
         app:icon="@drawable/facebook"
         app:iconGravity="textStart"
         app:iconSize="25dp"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintEnd_toEndOf="@+id/btnCreateMyAccount"
+        app:layout_constraintStart_toStartOf="@+id/btnCreateMyAccount"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateMyAccount" />
 
     <TextView
         android:id="@+id/tvExplore"
@@ -129,5 +101,43 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvCreateAccount"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount" />
+
+    <CheckBox
+        android:id="@+id/cbSignup"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="I am interested in and would like to receive information about products, services, free gifts, discounts, promotions and other relevant activities from 1112 Delivery and affiliated companies and relevant brands."
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="By clicking a button below, you confirm that you have read and accept the Terms & Conditions and Privacy Statement of The Minor Food Group PCL."
+        android:textColor="#AAAAAA"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/cbSignup"
+        app:layout_constraintStart_toStartOf="@+id/cbSignup"
+        app:layout_constraintTop_toBottomOf="@+id/cbSignup" />
+
+    <Button
+        android:id="@+id/btnCreateMyAccount"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Create My Account"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:backgroundTint="#028F46" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
