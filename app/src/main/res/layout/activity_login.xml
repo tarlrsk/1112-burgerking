@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/tvCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Welcome Back!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/tvExplore2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="from all our brands!"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvExplore"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvExplore"
+        app:layout_constraintTop_toBottomOf="@+id/tvExplore" />
+
+    <TextView
+        android:id="@+id/tvSignInHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Sign up here"
+        android:textColor="#028F46"
+        app:layout_constraintEnd_toEndOf="@+id/tvExplore2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvExplore2"
+        app:layout_constraintTop_toBottomOf="@+id/tvExplore2" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#028F46"
+        android:text="Log In"
+        android:textSize="16sp"
+        app:iconPadding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <EditText
+        android:id="@+id/tvSignupEmail"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:contextClickable="true"
+        android:ems="10"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:textAllCaps="false"
+        android:textColor="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="@+id/tvSignInHere"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvSignInHere"
+        app:layout_constraintTop_toBottomOf="@+id/tvSignInHere" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="#AAAAAA"
+        android:textColorHint="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="@+id/tvSignupEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvSignupEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvSignupEmail" />
+
+    <TextView
+        android:id="@+id/tvForgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="227dp"
+        android:layout_marginTop="10dp"
+        android:text="Forgot your password?"
+        android:textColor="#028F46"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+    <Button
+        android:id="@+id/btnLoginFacebook"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#1877F2"
+        android:text="Continue with Facebook"
+        android:textSize="16sp"
+        app:icon="@drawable/facebook"
+        app:iconGravity="textStart"
+        app:iconSize="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <TextView
+        android:id="@+id/tvExplore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Explore and enjoy awesome deals and food"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCreateAccount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvCreateAccount"
+        app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

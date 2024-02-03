@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BurgerKing1112App</string>
     <string name="_1112_delivery">1112 Delivery</string>
+    <string name="by_clicking_a_button_below_you_confirm_that_you_have_read_and_accept_the_terms_conditions_and_privacy_statement_of_the_minor_food_group_pcl"><![CDATA[By clicking a button below, you confirm that you have read and accept the Terms & Conditions and Privacy Statement of The Minor Food Group PCL.]]></string>
 </resources>
