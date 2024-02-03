@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvExplore" />
 
     <TextView
-        android:id="@+id/tvSignInHere"
+        android:id="@+id/btnSignUpPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -54,13 +54,13 @@
         android:text="Log In"
         android:textSize="16sp"
         app:iconPadding="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
         app:layout_constraintHorizontal_bias="0.39"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <EditText
-        android:id="@+id/tvSignupEmail"
+        android:id="@+id/tvSigninEmail"
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
@@ -70,13 +70,13 @@
         android:inputType="textEmailAddress"
         android:textAllCaps="false"
         android:textColor="#AAAAAA"
-        app:layout_constraintEnd_toEndOf="@+id/tvSignInHere"
+        app:layout_constraintEnd_toEndOf="@+id/btnSignUpPage"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvSignInHere"
-        app:layout_constraintTop_toBottomOf="@+id/tvSignInHere" />
+        app:layout_constraintStart_toStartOf="@+id/btnSignUpPage"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUpPage" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/tvPassword"
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="15dp"
@@ -85,9 +85,9 @@
         android:inputType="textPassword"
         android:textColor="#AAAAAA"
         android:textColorHint="#AAAAAA"
-        app:layout_constraintEnd_toEndOf="@+id/tvSignupEmail"
-        app:layout_constraintStart_toStartOf="@+id/tvSignupEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tvSignupEmail" />
+        app:layout_constraintEnd_toEndOf="@+id/tvSigninEmail"
+        app:layout_constraintStart_toStartOf="@+id/tvSigninEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvSigninEmail" />
 
     <TextView
         android:id="@+id/tvForgetPassword"
@@ -97,10 +97,10 @@
         android:layout_marginTop="10dp"
         android:text="Forgot your password?"
         android:textColor="#028F46"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <Button
         android:id="@+id/btnLoginFacebook"
