@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         if (currentUser == null) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+
+            finish()
         }
     }
 }
