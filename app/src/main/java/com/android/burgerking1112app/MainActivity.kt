@@ -34,5 +34,11 @@ class MainActivity : AppCompatActivity() {
 
             finish()
         }
+        else {
+            val intent = Intent(this, ButtomNavigationActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }
     }
 }
