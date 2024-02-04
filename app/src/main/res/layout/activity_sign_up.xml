@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvExplore" />
 
     <TextView
-        android:id="@+id/tvSignInHere"
+        android:id="@+id/btnSignInPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -56,13 +56,13 @@
         android:inputType="textEmailAddress"
         android:textAllCaps="false"
         android:textColor="#AAAAAA"
-        app:layout_constraintEnd_toEndOf="@+id/tvSignInHere"
+        app:layout_constraintEnd_toEndOf="@+id/btnSignInPage"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvSignInHere"
-        app:layout_constraintTop_toBottomOf="@+id/tvSignInHere" />
+        app:layout_constraintStart_toStartOf="@+id/btnSignInPage"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignInPage" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/tvPassword"
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginTop="15dp"
@@ -110,10 +110,10 @@
         android:text="I am interested in and would like to receive information about products, services, free gifts, discounts, promotions and other relevant activities from 1112 Delivery and affiliated companies and relevant brands."
         android:textSize="14sp"
         app:centerIfNoTextEnabled="true"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/tvPassword"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <TextView
         android:id="@+id/textView2"
