@@ -28,17 +28,19 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
-        if (currentUser == null) {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-
-            finish()
-        }
-        else {
-            val intent = Intent(this, ButtomNavigationActivity::class.java)
-            startActivity(intent)
-
-            finish()
-        }
+//        if (currentUser == null) {
+//            val intent = Intent(this, LoginActivity::class.java)
+//            startActivity(intent)
+//
+//            finish()
+//        }
+//        else {
+//            val intent = Intent(this, ButtomNavigationActivity::class.java)
+//            startActivity(intent)
+//
+//            finish()
+//        }
+        val intent = Intent(this, ButtomNavigationActivity::class.java)
+        startActivity(intent)
     }
 }
