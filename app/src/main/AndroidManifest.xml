@@ -18,7 +18,7 @@
             android:name=".ForgetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".forgetPasswordActivity"
+            android:name=".BurgerKingMenuActivity"
             android:exported="false" />
         <activity
             android:name=".ButtomNavigationActivity"
