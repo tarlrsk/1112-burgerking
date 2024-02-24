@@ -15,6 +15,9 @@
         android:theme="@style/Theme.BurgerKing1112App"
         tools:targetApi="31">
         <activity
+            android:name=".BurgerKingMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".ButtomNavigationActivity"
             android:exported="false" />
         <activity

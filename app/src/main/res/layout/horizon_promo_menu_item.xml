@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="150dp"
+    android:layout_height="220dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="10dp"
+    android:background="@color/white"
+    android:elevation="20dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgPromo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/hatyai_promo" />
+
+    <TextView
+        android:id="@+id/tvPromoDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="7dp"
+        android:text="Hat Yai Chicken King 2 pcs + 1 sticky Rice + Drink 16 oz 1 cup"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tvPromoPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="7dp"
+        android:text="฿ 129"
+        android:textColor="@color/green"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnPromoSelect"
+        android:layout_width="130dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="7dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Select"
+        android:textSize="10sp" />
+
+</LinearLayout>
