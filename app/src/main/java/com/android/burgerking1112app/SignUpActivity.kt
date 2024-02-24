@@ -42,7 +42,7 @@ class SignUpActivity : AppCompatActivity() {
                             Log.w(TAG, "createUserWithEmail:failure", task.exception)
                             Toast.makeText(
                                 baseContext,
-                                "Authentication failed.",
+                                "Email or password is invalid",
                                 Toast.LENGTH_SHORT,
                             ).show()
                         }

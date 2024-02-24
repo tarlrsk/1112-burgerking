@@ -25,6 +25,12 @@ class LoginActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+
+        view.btnForgetPassword.setOnClickListener{
+            val intent = Intent(this, ForgetPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
         view.btnLogin.setOnClickListener {
             val email = view.tvSigninEmail.text.toString()
             val password = view.tvPassword.text.toString()
@@ -42,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                             Log.w(TAG, "signInWithEmail:failure", task.exception)
                             Toast.makeText(
                                 baseContext,
-                                "Authentication failed.",
+                                task.exception?.message,
                                 Toast.LENGTH_SHORT,
                             ).show()
                         }
@@ -50,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
         }
+
 
     }
 }
