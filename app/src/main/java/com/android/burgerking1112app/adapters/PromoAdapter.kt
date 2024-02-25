@@ -17,7 +17,7 @@ class PromoAdapter(private val context: Context, private val promos: List<PromoM
     : RecyclerView.Adapter<PromoAdapter.RecyclerViewHolder>() {
     class RecyclerViewHolder(val binding: HorizonPromoMenuItemBinding): RecyclerView.ViewHolder(binding.root)
 
-    val storage = FirebaseStorage.getInstance()
+    private val storage = FirebaseStorage.getInstance()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val binding = HorizonPromoMenuItemBinding.inflate(LayoutInflater.from(context), parent, false)
