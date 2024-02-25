@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linearLayout"
     android:layout_width="150dp"
-    android:layout_height="220dp"
+    android:layout_height="210dp"
     android:layout_marginLeft="10dp"
     android:layout_marginTop="20dp"
     android:layout_marginRight="10dp"
-    android:background="@color/white"
+    android:background="@drawable/horizon_bg"
     android:elevation="20dp"
     android:orientation="vertical">
 
@@ -21,7 +21,7 @@
     <TextView
         android:id="@+id/tvPromoDescription"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_gravity="center"
         android:layout_marginStart="7dp"
         android:layout_marginTop="7dp"
