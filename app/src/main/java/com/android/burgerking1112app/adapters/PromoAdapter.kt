@@ -38,7 +38,7 @@ class PromoAdapter(private val context: Context, private val promos: List<PromoM
                 .load(imageURL)
                 .into(holder.binding.imgPromo)
         }
-        Log.d
+
         Glide.with(context).load(storageRef).into(holder.binding.imgPromo)
         holder.binding.tvPromoDescription.text = promo.promoDescription.toString()
         holder.binding.tvPromoPrice.text = "฿ " + promo.promoPrice.toString()
