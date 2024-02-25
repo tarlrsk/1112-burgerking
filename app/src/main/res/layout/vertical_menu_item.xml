@@ -9,6 +9,7 @@
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
     android:elevation="2dp"
+    android:background="@drawable/horizon_bg"
     >
 
     <ImageView
@@ -19,13 +20,13 @@
         app:layout_constraintBottom_toBottomOf="@id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:clipToOutline="true"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        android:background="@color/white"
         android:elevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
