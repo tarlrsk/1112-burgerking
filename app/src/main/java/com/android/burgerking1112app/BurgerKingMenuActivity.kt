@@ -1,6 +1,7 @@
 package com.android.burgerking1112app
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -90,6 +91,11 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
         view.rvVerticalMenu.adapter = MenuAdapter(this, menus)
         view.rvVerticalMenu.layoutManager = LinearLayoutManager(this)
+
+        view.icShoppingCart.setOnClickListener {
+            val intent = Intent(this, ShoppingCartActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }
