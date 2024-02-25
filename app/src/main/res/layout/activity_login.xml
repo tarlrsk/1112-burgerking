@@ -47,7 +47,9 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_height="60dp"
         android:layout_marginTop="52dp"
         android:backgroundTint="#028F46"
@@ -61,7 +63,9 @@
 
     <EditText
         android:id="@+id/tvSigninEmail"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="60dp"
         android:layout_marginTop="12dp"
         android:contextClickable="true"
@@ -77,8 +81,10 @@
 
     <EditText
         android:id="@+id/tvPassword"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Password"
@@ -91,27 +97,30 @@
 
     <TextView
         android:id="@+id/btnForgetPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="227dp"
-        android:layout_marginTop="10dp"
+        android:textAlignment="textEnd"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="12dp"
         android:text="Forgot your password?"
         android:textColor="#028F46"
-        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvPassword"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <Button
         android:id="@+id/btnLoginFacebook"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="60dp"
         android:backgroundTint="#1877F2"
-        android:text="Continue with Facebook"
         android:drawableLeft="@drawable/ic_facebook"
+        android:text="Continue with Facebook"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 

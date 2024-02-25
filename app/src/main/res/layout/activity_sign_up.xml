@@ -47,8 +47,10 @@
 
     <EditText
         android:id="@+id/tvSignupEmail"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
         android:contextClickable="true"
         android:ems="10"
@@ -63,8 +65,10 @@
 
     <EditText
         android:id="@+id/tvPassword"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
         android:ems="10"
         android:hint="Password"
@@ -77,8 +81,10 @@
 
     <Button
         android:id="@+id/btnLoginFacebook"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#1877F2"
         android:text="Continue with Facebook"
@@ -104,8 +110,10 @@
 
     <CheckBox
         android:id="@+id/cbSignup"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="6dp"
         android:text="I am interested in and would like to receive information about products, services, free gifts, discounts, promotions and other relevant activities from 1112 Delivery and affiliated companies and relevant brands."
         android:textSize="14sp"
@@ -117,8 +125,10 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/by_clicking_a_button_below_you_confirm_that_you_have_read_and_accept_the_terms_conditions_and_privacy_statement_of_the_minor_food_group_pcl"
         android:textColor="#AAAAAA"
@@ -129,10 +139,12 @@
 
     <Button
         android:id="@+id/btnCreateMyAccount"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:text="Create My Account"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="1.0"
