@@ -15,6 +15,8 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
                 android:id="@+id/pngWhopper"
                 android:layout_width="418dp"
                 android:layout_height="219dp"
@@ -50,22 +52,21 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Add menu bar  -->
+
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:text="Burger King"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/rvHorizontalMenu"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/pngWhopper"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <!-- Add menu bar  -->
+                app:layout_constraintVertical_bias="0.147" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvHorizontalMenu"
