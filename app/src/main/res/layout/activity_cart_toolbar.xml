@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/green">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/icCloseCart"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/baseline_close_white_24"
+            />
+
+        <TextView
+            android:id="@+id/tvShoppingCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shopping Cart"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/icCloseCart"
+            android:layout_marginLeft="97dp"
+            />
+
+        <ImageView
+            android:id="@+id/icSearch"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_toRightOf="@+id/tvShoppingCart"
+            android:layout_marginLeft="97dp"
+            android:src="@drawable/ic_call_center"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
