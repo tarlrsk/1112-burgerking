@@ -4,10 +4,8 @@ import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.HorizontalScrollView
-import android.widget.Toast
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.android.burgerking1112app.adapters.MenuAdapter
 import com.android.burgerking1112app.adapters.PromoAdapter
 import com.android.burgerking1112app.databinding.ActivityBurgerKingMenuBinding
@@ -18,18 +16,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
-import com.google.firebase.database.getValue
-import com.google.firebase.firestore.firestore
 
 class BurgerKingMenuActivity : AppCompatActivity() {
     private val view: ActivityBurgerKingMenuBinding by lazy { ActivityBurgerKingMenuBinding.inflate(layoutInflater) }
     private val database = Firebase.database("https://burger-king-1112-app-9e090-default-rtdb.asia-southeast1.firebasedatabase.app")
 
-    private val menus = listOf(
-        MainMenu("Cheesy Chick'N Crisp", "฿ 79", "https://firebasestorage.googleapis.com/v0/b/burger-king-1112-app-9e090.appspot.com/o/image%2Fcheesy_menu.png?alt=media&token=3307d99d-f453-4edb-bb97-de55bf4656ed"),
-        MainMenu("Cheesy Chick'N Crisp", "฿ 79", "https://firebasestorage.googleapis.com/v0/b/burger-king-1112-app-9e090.appspot.com/o/image%2Fcheesy_menu.png?alt=media&token=3307d99d-f453-4edb-bb97-de55bf4656ed"),
-        MainMenu("Cheesy Chick'N Crisp", "฿ 79", "https://firebasestorage.googleapis.com/v0/b/burger-king-1112-app-9e090.appspot.com/o/image%2Fcheesy_menu.png?alt=media&token=3307d99d-f453-4edb-bb97-de55bf4656ed")
-    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(view.root)
@@ -38,8 +29,16 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
         val promosRef = database.reference.child("promos")
 
+        view.backHome.setOnClickListener {
+            finish();
+        }
+
+        view.menuProgressBar.visibility = View.VISIBLE
+
         promosRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                view.menuProgressBar.visibility = View.VISIBLE
+                view.rvHorizontalMenu.visibility = View.GONE
                 promos.clear()
                 if(snapshot.exists()){
                     for(promoSnap in snapshot.children){
@@ -49,8 +48,38 @@ class BurgerKingMenuActivity : AppCompatActivity() {
                     }
                 }
 
+                view.menuProgressBar.visibility = View.GONE
+                view.rvHorizontalMenu.visibility = View.VISIBLE
                 view.rvHorizontalMenu.adapter = PromoAdapter(this@BurgerKingMenuActivity, promos)
                 view.rvHorizontalMenu.layoutManager = LinearLayoutManager(this@BurgerKingMenuActivity, LinearLayoutManager.HORIZONTAL, false)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+        var menus = arrayListOf<MainMenu>()
+        var menuRef = database.reference.child("menus")
+        menuRef.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                view.menuProgressBar.visibility = View.VISIBLE
+                view.rvVerticalMenu.visibility = View.GONE
+                menus.clear()
+                if(snapshot.exists()){
+                    for(menusSnap in snapshot.children){
+                        val menuData = menusSnap.getValue(MainMenu::class.java)
+                        Log.d(TAG, "Some logging "+ menuData?.name.toString() + menuData?.imgPath.toString());
+                        menus.add(menuData!!)
+                    }
+                }
+
+
+                view.menuProgressBar.visibility = View.GONE
+                view.rvVerticalMenu.visibility = View.VISIBLE
+                view.rvVerticalMenu.adapter = MenuAdapter(this@BurgerKingMenuActivity, menus)
+                view.rvVerticalMenu.layoutManager = LinearLayoutManager(this@BurgerKingMenuActivity, LinearLayoutManager.VERTICAL, false)
             }
 
             override fun onCancelled(error: DatabaseError) {
