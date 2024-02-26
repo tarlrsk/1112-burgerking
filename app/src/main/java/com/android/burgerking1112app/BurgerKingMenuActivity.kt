@@ -13,6 +13,8 @@ import com.android.burgerking1112app.databinding.ActivityBurgerKingMenuBinding
 import com.android.burgerking1112app.models.MainMenu
 import com.android.burgerking1112app.models.PromoMenu
 import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -21,13 +23,22 @@ import com.google.firebase.database.database
 class BurgerKingMenuActivity : AppCompatActivity() {
     private val view: ActivityBurgerKingMenuBinding by lazy { ActivityBurgerKingMenuBinding.inflate(layoutInflater) }
     private val database = Firebase.database("https://burger-king-1112-app-9e090-default-rtdb.asia-southeast1.firebasedatabase.app")
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(view.root)
 
-        var promos = arrayListOf<PromoMenu>()
+        auth = Firebase.auth
 
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        var promos = arrayListOf<PromoMenu>()
         val promosRef = database.reference.child("promos")
 
         view.backHome.setOnClickListener {
@@ -51,7 +62,7 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
                 view.menuProgressBar.visibility = View.GONE
                 view.rvHorizontalMenu.visibility = View.VISIBLE
-                view.rvHorizontalMenu.adapter = PromoAdapter(this@BurgerKingMenuActivity, promos)
+                view.rvHorizontalMenu.adapter = PromoAdapter(this@BurgerKingMenuActivity, promos, database, currentUser!!.uid)
                 view.rvHorizontalMenu.layoutManager = LinearLayoutManager(this@BurgerKingMenuActivity, LinearLayoutManager.HORIZONTAL, false)
             }
 
@@ -79,7 +90,7 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
                 view.menuProgressBar.visibility = View.GONE
                 view.rvVerticalMenu.visibility = View.VISIBLE
-                view.rvVerticalMenu.adapter = MenuAdapter(this@BurgerKingMenuActivity, menus)
+                view.rvVerticalMenu.adapter = MenuAdapter(this@BurgerKingMenuActivity, menus,database,currentUser!!.uid)
                 view.rvVerticalMenu.layoutManager = LinearLayoutManager(this@BurgerKingMenuActivity, LinearLayoutManager.VERTICAL, false)
             }
 
@@ -89,13 +100,9 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
         })
 
-        view.rvVerticalMenu.adapter = MenuAdapter(this, menus)
-        view.rvVerticalMenu.layoutManager = LinearLayoutManager(this)
-
         view.icShoppingCart.setOnClickListener {
             val intent = Intent(this, ShoppingCartActivity::class.java)
             startActivity(intent)
         }
     }
-
 }
