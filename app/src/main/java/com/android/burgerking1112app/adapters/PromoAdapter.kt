@@ -46,7 +46,7 @@ class PromoAdapter(private val context: Context, private val promos: List<PromoM
 
         holder.binding.btnPromoSelect.setOnClickListener  {
             val cartRef = firebaseDatabase.reference.child("carts").child(userId).push()
-            val item = CartItem(cartRef.key,promo.promoDescription, promo.promoPrice, promo.imgPath, 1)
+            val item = CartItem(cartRef.key,promo.id,promo.promoDescription, promo.promoPrice, promo.imgPath, 1)
             cartRef.setValue(item)
         }
     }

@@ -12,7 +12,7 @@
         android:src="@drawable/cheesy_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,8 +20,7 @@
         android:id="@+id/tvMenuName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="140dp"
         android:text="Hat Yai Chicken King 2 pcs + 1 Sticky Rice + Drink 16 oz 1 cup"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/imgMenuCart"
@@ -35,12 +34,12 @@
         android:id="@+id/tvItemPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
         android:layout_marginBottom="16dp"
         android:text="฿ 169"
         android:textColor="@color/green"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -48,12 +47,12 @@
         android:id="@+id/btnAddMinus"
         android:layout_width="80dp"
         android:layout_height="25dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="20dp"
         android:src="@drawable/yellow_box_cart_button"
         app:layout_constraintBottom_toBottomOf="@+id/tvItemPrice"
         app:layout_constraintStart_toEndOf="@+id/imgMenuCart"
         app:layout_constraintTop_toTopOf="@+id/tvItemPrice"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvQuantity"

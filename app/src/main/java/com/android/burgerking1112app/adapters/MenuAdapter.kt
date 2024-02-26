@@ -44,9 +44,20 @@ class MenuAdapter(private val context: Context, private val menus: List<MainMenu
         holder.binding.tvMenuPrice.text = "฿ " + menu.price.toString()
 
         holder.binding.btnMenuSelect.setOnClickListener  {
-            val cartRef = firebaseDatabase.reference.child("carts").child(userId).push()
-            val item = CartItem(cartRef.key,menu.name, menu.price, menu.imgPath, 1)
-            cartRef.setValue(item)
+//            val itemsSnapshot = firebaseDatabase.reference.child("carts").child(userId).get().result
+//            for(itemSnapshot in itemsSnapshot.children){
+//                val itemData = itemSnapshot.getValue(CartItem::class.java)
+//                if (itemData!!.productId == menu.id){
+//                    val cartRef = firebaseDatabase.reference.child("carts").child(userId).child(
+//                        itemData.id.toString()
+//                    )
+//                    cartRef.child("quantity").setValue(3)
+//                }
+//            }
+        val cartRef = firebaseDatabase.reference.child("carts").child(userId).push()
+        val item = CartItem(cartRef.key,menu.id,menu.name, menu.price, menu.imgPath, 1)
+        cartRef.setValue(item)
         }
+
     }
 }

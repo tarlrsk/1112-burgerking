@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.burgerking1112app.databinding.ShoppingCartListItemBinding
-import com.android.burgerking1112app.models.ShoppingCart
+import com.android.burgerking1112app.models.CartItem
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
 
-class ShoppingCartAdapter (private val context: Context, private val items: List<ShoppingCart>)
+class ShoppingCartAdapter (private val context: Context, private val items: List<CartItem>)
     : RecyclerView.Adapter<ShoppingCartAdapter.RecyclerViewHolder>()  {
     class RecyclerViewHolder(val binding: ShoppingCartListItemBinding): RecyclerView.ViewHolder(binding.root)
     private val storage = FirebaseStorage.getInstance()
@@ -34,7 +34,7 @@ class ShoppingCartAdapter (private val context: Context, private val items: List
                 .into(holder.binding.imgMenuCart)
         }
 
-//        Glide.with(context).load(storageRef).into(holder.binding.imgMenuCart)
+        Glide.with(context).load(storageRef).into(holder.binding.imgMenuCart)
         holder.binding.tvMenuName.text = item.name.toString()
         holder.binding.tvQuantity.text = item.quantity.toString()
         holder.binding.tvItemPrice.text = "฿ " + item.price.toString()
