@@ -18,9 +18,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
-        android:paddingBottom="15dp"
         android:background="@drawable/top_image_menu_bg"
         android:orientation="vertical"
+        android:paddingBottom="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +84,7 @@
             app:layout_constraintTop_toTopOf="@+id/icBurgerKing" />
 
         <TextView
+            android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Remove All"

@@ -35,5 +35,11 @@ class ShoppingCartActivity : AppCompatActivity() {
         view.rvListSelectedmenu.adapter = ShoppingCartAdapter(this, shoppingCart)
         view.rvListSelectedmenu.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+
+
+        view.btnCheckOut.setOnClickListener {
+            val intent = Intent(this, PaymentActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
