@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".PaymentActivity">
+
+    <TextView
+        android:id="@+id/tvPaymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Payment"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/icBackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/baseline_arrow_back_black_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPaymentTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPaymentTitle" />
+
+    <ImageView
+        android:id="@+id/imgDeliveryBox"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/white_box_gray_stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPaymentTitle"/>
+
+    <ImageView
+        android:id="@+id/icCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delivery_car"
+        app:layout_constraintBottom_toTopOf="@+id/imgGreenLine"
+        app:layout_constraintEnd_toEndOf="@+id/imgDeliveryBox"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="@+id/imgDeliveryBox"
+        app:layout_constraintTop_toTopOf="@+id/imgDeliveryBox"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <TextView
+        android:id="@+id/tvDeliveryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery"
+        android:textSize="14sp"
+        android:textColor="@color/green"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/icCar"
+        app:layout_constraintStart_toEndOf="@+id/icCar"
+        app:layout_constraintTop_toTopOf="@+id/icCar" />
+
+    <ImageView
+        android:id="@+id/imgGreenLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/green_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgDeliveryBox" />
+
+    <TextView
+        android:id="@+id/tvDeliveryFeeNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:text="Delivery fee menu availability may change depending on the selected option."
+        android:textColor="@color/gray"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgDeliveryBox"
+        app:layout_constraintStart_toStartOf="@+id/imgDeliveryBox"
+        app:layout_constraintTop_toBottomOf="@+id/imgGreenLine" />
+
+    <ImageView
+        android:id="@+id/icLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/baseline_location_green_on_24"
+        app:layout_constraintStart_toStartOf="@+id/tvDeliveryFeeNotice"
+        app:layout_constraintTop_toBottomOf="@+id/tvDeliveryFeeNotice" />
+
+    <TextView
+        android:id="@+id/tvWorkTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Work"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/icLocation"
+        app:layout_constraintStart_toEndOf="@+id/icLocation"
+        app:layout_constraintTop_toTopOf="@+id/icLocation" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="10dp"
+        android:text="Bang Sao Thong, Bang Sao Thong District, Samut Prakan 10540"
+        android:textColor="@color/gray"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvWorkTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvWorkTitle" />
+
+    <ImageView
+        android:id="@+id/icMoreAboutAdress"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAddress"
+        app:layout_constraintEnd_toEndOf="@+id/imgDeliveryBox"
+        app:layout_constraintTop_toTopOf="@+id/tvAddress"
+        android:layout_marginRight="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/gray_line_payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDeliveryBox" />
+
+
+    <ImageView
+        android:id="@+id/icCash"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_cash"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="Cash"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/icCash"
+        app:layout_constraintStart_toEndOf="@+id/icCash"
+        app:layout_constraintTop_toTopOf="@+id/icCash" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/gray_line_payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDeliveryBox" />
+
+    <ImageView
+        android:id="@+id/icTaxInvoice"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_tax_invoice"
+        app:layout_constraintBottom_toTopOf="@+id/grayBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/tvTaxInvoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request Tax Invoice"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/icTaxInvoice"
+        app:layout_constraintStart_toEndOf="@+id/icTaxInvoice"
+        app:layout_constraintTop_toTopOf="@+id/icTaxInvoice"
+        android:layout_marginLeft="8dp"/>
+
+    <ImageView
+        android:id="@+id/grayBox"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginTop="164dp"
+        android:src="@drawable/gray_line_payment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDeliveryBox" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOTAL"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/grayBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grayBox" />
+
+    <TextView
+        android:id="@+id/tvTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="฿ 193"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/grayBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grayBox"
+        android:layout_marginRight="25dp"/>
+
+    <ImageView
+        android:id="@+id/grayBottom"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/gray_line_payment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDeliveryBox"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Place Order"
+        android:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grayBottom"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

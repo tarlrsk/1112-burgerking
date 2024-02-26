@@ -75,17 +75,28 @@ class ShoppingCartActivity : AppCompatActivity() {
 
         view.btnApplyPromoCode.setOnClickListener {
             val code = view.tvPromoCode.text.toString()
-            if(code.uppercase() == "DISCOUNT5" && !codeUsed){
+            if (code.uppercase() == "DISCOUNT5" && !codeUsed) {
                 totalPrice -= shippingPrice
                 totalPrice *= (1.00 - 0.05)
                 totalPrice += shippingPrice
                 view.tvTotalPrice.text = "฿ ${totalPrice.roundToLong()}"
                 codeUsed = true
-            }else if(code.uppercase() == "DISCOUNT5" && codeUsed){
-                Toast.makeText(this@ShoppingCartActivity, "DISCOUNT5 is already applied", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(this@ShoppingCartActivity,"Invalid Promo Code", Toast.LENGTH_SHORT).show()
+            } else if (code.uppercase() == "DISCOUNT5" && codeUsed) {
+                Toast.makeText(
+                    this@ShoppingCartActivity,
+                    "DISCOUNT5 is already applied",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(this@ShoppingCartActivity, "Invalid Promo Code", Toast.LENGTH_SHORT)
+                    .show()
             }
+        }
+
+
+        view.btnCheckOut.setOnClickListener {
+            val intent = Intent(this, PaymentActivity::class.java)
+            startActivity(intent)
         }
     }
 }
