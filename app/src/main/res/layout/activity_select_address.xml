@@ -102,49 +102,16 @@
         app:layout_constraintTop_toTopOf="@+id/tvMyAddresses"
         android:layout_marginRight="16dp"/>
 
-    <ImageView
-        android:id="@+id/icWorkBag"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAddresses"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/ic_work_bag_green"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMyAddresses" />
-
-    <TextView
-        android:id="@+id/tvAddressName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Assumption University"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/icWorkBag"
-        app:layout_constraintStart_toEndOf="@+id/icWorkBag"
-        app:layout_constraintTop_toTopOf="@+id/icWorkBag" />
-
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Bang Sao Thong, Bang Sao Thong District, Samut Prakan 10540"
-        android:textColor="@color/gray"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="@+id/whiteBox"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvAddressName"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddressName" />
-
-    <ImageView
-        android:id="@+id/icEdit"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/baseline_edit_gray_24"
-        app:layout_constraintBottom_toBottomOf="@+id/tvAddress"
+        android:visibility="visible"
+        android:layout_marginTop="45dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvAddress" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/whiteBox" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
