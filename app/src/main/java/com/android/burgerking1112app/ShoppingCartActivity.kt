@@ -102,6 +102,8 @@ class ShoppingCartActivity : AppCompatActivity() {
         view.tvAddMore.setOnClickListener {
             val intent = Intent(this, BurgerKingMenuActivity::class.java)
             startActivity(intent)
+            
+            finish();
         }
     }
 }
