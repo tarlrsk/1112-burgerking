@@ -98,5 +98,10 @@ class ShoppingCartActivity : AppCompatActivity() {
             val intent = Intent(this, PaymentActivity::class.java)
             startActivity(intent)
         }
+
+        view.tvAddMore.setOnClickListener {
+
+            finish();
+        }
     }
 }
