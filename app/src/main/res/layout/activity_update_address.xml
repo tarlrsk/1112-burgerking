@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UpdateAddressActivity">
+
+    <TextView
+        android:id="@+id/tvUpdateAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Update Address"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/icBackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/baseline_arrow_back_black_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUpdateAddressTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvUpdateAddressTitle" />
+
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Phone Number"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/editPhoneNumber"
+        app:layout_constraintTop_toTopOf="@+id/editPhoneNumber" />
+
+    <EditText
+        android:id="@+id/editPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="20dp"
+        android:contextClickable="true"
+        android:ems="10"
+        android:inputType="number"
+        android:textAllCaps="false"
+        android:textColor="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="@+id/tvUpdateAddressTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvUpdateAddressTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpdateAddressTitle" />
+
+    <TextView
+        android:id="@+id/tvAddressName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Address Name"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/editAddressName"
+        app:layout_constraintTop_toTopOf="@+id/editAddressName" />
+
+    <EditText
+        android:id="@+id/editAddressName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:contextClickable="true"
+        android:ems="10"
+        android:inputType="number"
+        android:textAllCaps="false"
+        android:textColor="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="@+id/editPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/editPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editPhoneNumber" />
+
+    <TextView
+        android:id="@+id/tvAddBuildingNotice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="e.g. Home, office, building name"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/editAddressName"
+        app:layout_constraintTop_toBottomOf="@+id/editAddressName" />
+
+    <TextView
+        android:id="@+id/tvAddressInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Address Information"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/editAddressInfo"
+        app:layout_constraintTop_toTopOf="@+id/editAddressInfo" />
+
+    <EditText
+        android:id="@+id/editAddressInfo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="20dp"
+        android:contextClickable="true"
+        android:ems="10"
+        android:inputType="number"
+        android:textAllCaps="false"
+        android:textColor="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="@+id/editAddressName"
+        app:layout_constraintStart_toStartOf="@+id/editAddressName"
+        app:layout_constraintTop_toBottomOf="@+id/editAddressName" />
+
+    <EditText
+        android:id="@+id/editNoteToDriver"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:contextClickable="true"
+        android:hint="Note To Driver"
+        android:ems="10"
+        android:textSize="16sp"
+        android:inputType="number"
+        android:textAllCaps="false"
+        android:textColor="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="@+id/editAddressInfo"
+        app:layout_constraintStart_toStartOf="@+id/editAddressInfo"
+        app:layout_constraintTop_toBottomOf="@+id/editAddressInfo" />
+
+    <TextView
+        android:id="@+id/tvToDriverNotice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let driver know what to do when arrives"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/editNoteToDriver"
+        app:layout_constraintTop_toBottomOf="@+id/editNoteToDriver" />
+
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Label(Optional)"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/editNoteToDriver"
+        app:layout_constraintTop_toBottomOf="@+id/editNoteToDriver"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/tvGiveLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Give this address a label to make it stand out!"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tvLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabel" />
+
+    <Button
+        android:id="@+id/btnHomeAddress"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/white"
+        android:text="Home"
+        android:textStyle="bold"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:icon="@drawable/ic_home"
+        app:iconPadding="4dp"
+        app:iconTint="@color/gray"
+        app:layout_constraintStart_toStartOf="@+id/tvGiveLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvGiveLabel"
+        app:strokeColor="#AAAAAA"
+        app:strokeWidth="1sp" />
+
+    <Button
+        android:id="@+id/btnWorkAddress"
+        android:layout_width="115dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="@color/white"
+        android:text="Work"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_work_bag_green"
+        app:iconPadding="4dp"
+        app:iconTint="@color/gray"
+        app:layout_constraintStart_toEndOf="@+id/btnHomeAddress"
+        app:layout_constraintTop_toBottomOf="@+id/tvGiveLabel"
+        app:strokeColor="#AAAAAA"
+        app:strokeWidth="1sp" />
+
+    <Button
+        android:id="@+id/btnUpdateAddress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Update"
+        android:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

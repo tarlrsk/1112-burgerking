@@ -16,6 +16,12 @@
         android:theme="@style/Theme.BurgerKing1112App"
         tools:targetApi="31">
         <activity
+            android:name=".OrderStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateAddressActivity"
+            android:exported="false" />
+        <activity
             android:name=".SelectAddressActivity"
             android:exported="false" />
         <activity
