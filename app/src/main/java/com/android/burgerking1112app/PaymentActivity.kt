@@ -15,5 +15,9 @@ class PaymentActivity : AppCompatActivity() {
             val intent = Intent(this, SelectAddressActivity::class.java)
             startActivity(intent)
         }
+        view.btnPlaceOrder.setOnClickListener {
+            val intent = Intent(this, OrderStatusActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

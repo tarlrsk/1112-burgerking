@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".OrderStatusActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.516"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/tvPageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="Order Status"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/icBackArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/baseline_arrow_back_black_ios_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icCallCenter"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_call_center_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/icBackArrow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/icBackArrow" />
+
+                <TextView
+                    android:id="@+id/tvOrderDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Order Details"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/icBackArrow"
+                    app:layout_constraintTop_toBottomOf="@+id/icBackArrow" />
+
+                <TextView
+                    android:id="@+id/tvTrackOrderData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="Track Order"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOrderDetails"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOrderDetails" />
+
+                <TextView
+                    android:id="@+id/tvOrderNumberTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="Order number"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvOrderDetails"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+                <TextView
+                    android:id="@+id/tvOrderNumberData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2041986341"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOrderNumberTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/tvTrackOrderData"
+                    app:layout_constraintTop_toTopOf="@+id/tvOrderNumberTitle" />
+
+                <TextView
+                    android:id="@+id/tvOrderDateTimeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Order placed at"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvOrderNumberTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOrderNumberTitle" />
+
+                <TextView
+                    android:id="@+id/tvOrderDateTimeData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11:57, Fri 29 Dec 2023"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOrderDateTimeTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/tvOrderNumberData"
+                    app:layout_constraintTop_toTopOf="@+id/tvOrderDateTimeTitle" />
+
+                <TextView
+                    android:id="@+id/tvOrderStatusTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Order Status"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvOrderDateTimeTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOrderDateTimeTitle" />
+
+                <TextView
+                    android:id="@+id/tvOrderStatusData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Received"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOrderStatusTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/tvOrderDateTimeData"
+                    app:layout_constraintTop_toTopOf="@+id/tvOrderStatusTitle" />
+
+                <TextView
+                    android:id="@+id/tvPaymentMethodTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Payment Method"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvOrderStatusTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOrderStatusTitle" />
+
+                <TextView
+                    android:id="@+id/tvPaymentMethodData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPaymentMethodTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/tvOrderStatusData"
+                    app:layout_constraintTop_toTopOf="@+id/tvPaymentMethodTitle" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/gray_line_shopping_cart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPaymentMethodTitle" />
+
+                <TextView
+                    android:id="@+id/tvDeliverInfoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Delivery Information"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/tvPaymentMethodTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPaymentMethodTitle" />
+
+                <TextView
+                    android:id="@+id/tvDeliverToTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="Deliver to"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvDeliverInfoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeliverInfoTitle" />
+
+                <TextView
+                    android:id="@+id/tvDeliverToData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Assumption University"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDeliverToTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/tvPaymentMethodData"
+                    app:layout_constraintTop_toTopOf="@+id/tvDeliverToTitle" />
+
+                <TextView
+                    android:id="@+id/tvDeliveryTimeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Delivery Time"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvDeliverToTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeliverToTitle" />
+
+                <TextView
+                    android:id="@+id/tvDeliverytimeData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:27, Fri 29 Dec 2023"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDeliveryTimeTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDeliverToData"
+                    app:layout_constraintTop_toTopOf="@+id/tvDeliveryTimeTitle" />
+
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginTop="460dp"-->
+<!--                    android:src="@drawable/gray_line_payment"/>-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginTop="480dp"-->
+<!--                    android:layout_marginLeft="15dp"-->
+<!--                    android:layout_marginRight="15dp"-->
+<!--                    android:layout_marginBottom="15dp"-->
+<!--                    android:src="@drawable/white_box_order_summary" />-->
+
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_burgerking_company_logo_foreground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDeliveryTimeTitle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOrderSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+                <TextView
+                    android:id="@+id/tvDiscountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discount"
+                    android:textColor="@color/green"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView9"
+                    app:layout_constraintTop_toBottomOf="@+id/rvOrderSummary"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="฿ 0"
+                    android:textColor="@color/green"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDiscountLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvDiscountLabel"
+                    android:layout_marginRight="35dp" />
+
+                <TextView
+                    android:id="@+id/tvTotalLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="TOTAL"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvDiscountLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDiscountLabel"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="฿ 169"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvTotalLabel"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDiscount"
+                    app:layout_constraintTop_toTopOf="@+id/tvTotalLabel"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/white"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvSubtotalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Subtotal"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSubtotalData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="฿ 169"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvSubtotalTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvSubtotalTitle" />
+
+            <TextView
+                android:id="@+id/tvDeliveryFeeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Delivery fee"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tvSubtotalTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtotalTitle" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="฿ 19"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDeliveryFeeTitle"
+                app:layout_constraintEnd_toEndOf="@+id/tvSubtotalData"
+                app:layout_constraintTop_toTopOf="@+id/tvDeliveryFeeTitle" />
+
+            <TextView
+                android:id="@+id/tvTotalDiscountTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Total Discount"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tvDeliveryFeeTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvDeliveryFeeTitle" />
+
+            <TextView
+                android:id="@+id/tvTotalDiscountData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- ฿ 0"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTotalDiscountTitle"
+                app:layout_constraintEnd_toEndOf="@+id/textView16"
+                app:layout_constraintTop_toBottomOf="@+id/tvDeliveryFeeTitle" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Total"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvTotalDiscountTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotalDiscountTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="฿ 193"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textView17"
+                app:layout_constraintEnd_toEndOf="@+id/tvTotalDiscountData"
+                app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
