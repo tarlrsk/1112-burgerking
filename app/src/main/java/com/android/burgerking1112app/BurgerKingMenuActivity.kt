@@ -9,7 +9,9 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.burgerking1112app.adapters.MenuAdapter
 import com.android.burgerking1112app.adapters.PromoAdapter
+import com.android.burgerking1112app.adapters.ShoppingCartAdapter
 import com.android.burgerking1112app.databinding.ActivityBurgerKingMenuBinding
+import com.android.burgerking1112app.models.CartItem
 import com.android.burgerking1112app.models.MainMenu
 import com.android.burgerking1112app.models.PromoMenu
 import com.google.firebase.Firebase
@@ -19,6 +21,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
+import kotlin.math.roundToLong
 
 class BurgerKingMenuActivity : AppCompatActivity() {
     private val view: ActivityBurgerKingMenuBinding by lazy { ActivityBurgerKingMenuBinding.inflate(layoutInflater) }
@@ -47,6 +50,24 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
         view.menuProgressBar.visibility = View.VISIBLE
 
+        var cartItems = arrayListOf<CartItem>()
+        var itemsRef = database.reference.child("carts").child(currentUser!!.uid)
+
+        itemsRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                cartItems.clear()
+                if(snapshot.exists()){
+                    for(cartSnap in snapshot.children){
+                        val cartItemData = cartSnap.getValue(CartItem::class.java)
+                        cartItems.add(cartItemData!!)
+                    }
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
         promosRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 view.menuProgressBar.visibility = View.VISIBLE
@@ -62,7 +83,7 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
                 view.menuProgressBar.visibility = View.GONE
                 view.rvHorizontalMenu.visibility = View.VISIBLE
-                view.rvHorizontalMenu.adapter = PromoAdapter(this@BurgerKingMenuActivity, promos, database, currentUser!!.uid)
+                view.rvHorizontalMenu.adapter = PromoAdapter(this@BurgerKingMenuActivity, promos, database, currentUser!!.uid, cartItems)
                 view.rvHorizontalMenu.layoutManager = LinearLayoutManager(this@BurgerKingMenuActivity, LinearLayoutManager.HORIZONTAL, false)
             }
 
@@ -90,7 +111,7 @@ class BurgerKingMenuActivity : AppCompatActivity() {
 
                 view.menuProgressBar.visibility = View.GONE
                 view.rvVerticalMenu.visibility = View.VISIBLE
-                view.rvVerticalMenu.adapter = MenuAdapter(this@BurgerKingMenuActivity, menus,database,currentUser!!.uid)
+                view.rvVerticalMenu.adapter = MenuAdapter(this@BurgerKingMenuActivity, menus,database,currentUser!!.uid, cartItems)
                 view.rvVerticalMenu.layoutManager = LinearLayoutManager(this@BurgerKingMenuActivity, LinearLayoutManager.VERTICAL, false)
             }
 

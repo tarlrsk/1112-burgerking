@@ -24,6 +24,11 @@ class SignUpActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+        view.cbSignup.setOnClickListener {
+            view.btnCreateMyAccount.isClickable = view.cbSignup.isChecked
+            view.btnCreateMyAccount.isEnabled = view.cbSignup.isChecked
+        }
+
         view.btnCreateMyAccount.setOnClickListener {
             val email = view.tvSignupEmail.text.toString()
             val password = view.tvPassword.text.toString()
@@ -42,7 +47,7 @@ class SignUpActivity : AppCompatActivity() {
                             Log.w(TAG, "createUserWithEmail:failure", task.exception)
                             Toast.makeText(
                                 baseContext,
-                                "Email or password is invalid",
+                                task.exception?.message.toString(),
                                 Toast.LENGTH_SHORT,
                             ).show()
                         }
