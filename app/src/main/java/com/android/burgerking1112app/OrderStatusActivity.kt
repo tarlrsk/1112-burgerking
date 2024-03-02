@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
 import com.kofigyan.stateprogressbar.StateProgressBar
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import kotlin.math.roundToLong
 
 
@@ -55,15 +57,21 @@ class OrderStatusActivity : AppCompatActivity() {
                     if(snapshot.exists()){
                         val orderData = snapshot.getValue(Order::class.java)
                         if(orderData != null){
+                            val orderAtDateTime = LocalDateTime.parse(orderData.orderAt)
+                            val arriveDateTime = orderAtDateTime.plusHours(1)
+                            val formatter = DateTimeFormatter.ofPattern("HH:mm, E dd MMM yyyy")
+
+                            view.tvOrderDateTimeData.text = orderAtDateTime.format(formatter)
+                            view.tvDeliverytimeData.text = arriveDateTime.format(formatter)
                             view.tvOrderNumberData.text = orderData.orderNo
                             view.tvOrderStatusData.text = orderData.status?.status ?: "Something wrong with status"
                             view.tvDeliverToData.text  = orderData.deliveryTo
                             view.tvSubtotalData.text = "฿ ${orderData.subTotal!!.roundToLong()}"
                             view.tvDeliveryFeeData.text = "฿ ${orderData.deliveryFee}"
                             view.tvDiscount.text = "฿ ${orderData.totalDiscount!!.roundToLong()}"
-                            view.tvTotalDiscountData.text = "฿ ${orderData.totalDiscount!!.roundToLong()}"
+                            view.tvTotalDiscountData.text = "- ฿ ${orderData.totalDiscount!!.roundToLong()}"
                             view.tvTotalPriceData.text = "฿ ${orderData.totalPrice!!.roundToLong()}"
-                            view.tvGreenTotalPriceData.text = "฿ ${orderData.totalPrice!!.roundToLong()}"
+                            view.tvGreenTotalPriceData.text = "฿ ${orderData.subTotal!!.roundToLong()}"
                         }
 
                         when (orderData!!.status) {

@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.burgerking1112app.PaymentActivity
+import com.android.burgerking1112app.R
 import com.android.burgerking1112app.SelectAddressActivity
 import com.android.burgerking1112app.UpdateAddressActivity
+import com.android.burgerking1112app.constant.AddressLabel
 import com.android.burgerking1112app.databinding.AddressItemBinding
 import com.android.burgerking1112app.models.Address
 import com.google.firebase.storage.FirebaseStorage
@@ -29,6 +31,12 @@ class AddressAdapter (private val activity: SelectAddressActivity,private val co
 
         holder.binding.tvAddressName.text = address.title.toString()
         holder.binding.tvAddress.text = address.address.toString()
+
+        if(address.label == AddressLabel.HOME){
+            holder.binding.icWorkBag.setImageResource(R.drawable.ic_home_green)
+        }else if(address.label == AddressLabel.WORK){
+            holder.binding.icWorkBag.setImageResource(R.drawable.ic_work_bag_green)
+        }
 
         holder.binding.icEdit.setOnClickListener {
             val intent = Intent(context,UpdateAddressActivity::class.java)

@@ -160,9 +160,9 @@ class PaymentActivity : AppCompatActivity() {
                     }
                 }
                 click += 1
-                val subTotal = totalPrice
                 Log.d("cartPrice", totalPrice.toString())
                 totalDiscount = totalPrice * discount
+                val subTotal = totalPrice - totalDiscount
                 totalPrice += shippingPrice
                 Log.d("cartPrice",totalDiscount.toString())
                 Log.d("cartPrice",discount.toString())
