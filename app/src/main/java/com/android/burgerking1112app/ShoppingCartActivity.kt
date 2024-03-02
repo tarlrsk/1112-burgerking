@@ -15,6 +15,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
+import java.math.BigDecimal
 import kotlin.math.roundToLong
 
 class ShoppingCartActivity : AppCompatActivity() {
@@ -52,6 +53,7 @@ class ShoppingCartActivity : AppCompatActivity() {
 
         itemsRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                totalPrice = 0.0
                 cartItems.clear()
                 if(snapshot.exists()){
                     for(cartSnap in snapshot.children){
@@ -96,6 +98,7 @@ class ShoppingCartActivity : AppCompatActivity() {
 
         view.btnCheckOut.setOnClickListener {
             val intent = Intent(this, PaymentActivity::class.java)
+            intent.putExtra("totalPrice", totalPrice.roundToLong());
             startActivity(intent)
         }
 

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.android.burgerking1112app.BurgerKingMenuActivity
-import com.android.burgerking1112app.SignUpActivity
+import com.android.burgerking1112app.ShoppingCartActivity
 import com.android.burgerking1112app.databinding.FragmentMenuBinding
 
 class FragmentMenu: Fragment() {
@@ -25,6 +25,12 @@ class FragmentMenu: Fragment() {
             val intent = Intent(requireContext(), BurgerKingMenuActivity::class.java)
             startActivity(intent)
         }
+
+        view.include.icShoppingcart.setOnClickListener {
+            val intent = Intent(requireContext(), ShoppingCartActivity::class.java)
+            startActivity(intent)
+        }
+
         return view.root
     }
 
