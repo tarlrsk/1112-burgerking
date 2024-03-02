@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.burgerking1112app.PaymentActivity
+import com.android.burgerking1112app.SelectAddressActivity
 import com.android.burgerking1112app.UpdateAddressActivity
 import com.android.burgerking1112app.databinding.AddressItemBinding
 import com.android.burgerking1112app.models.Address
 import com.google.firebase.storage.FirebaseStorage
 
-class AddressAdapter (private val context: Context, private val addresses: List<Address>)
+class AddressAdapter (private val activity: SelectAddressActivity,private val context: Context, private val addresses: List<Address>, private val discount:Double)
     : RecyclerView.Adapter<AddressAdapter.RecyclerViewHolder>()  {
     class RecyclerViewHolder(val binding: AddressItemBinding): RecyclerView.ViewHolder(binding.root)
     private val storage = FirebaseStorage.getInstance()
@@ -38,8 +39,9 @@ class AddressAdapter (private val context: Context, private val addresses: List<
         holder.binding.addressBox.setOnClickListener{
             val intent = Intent(context,PaymentActivity::class.java)
             intent.putExtra("addressId", address.id)
+            intent.putExtra("discount", discount)
             context.startActivity(intent)
+            activity.finish()
         }
     }
-
 }

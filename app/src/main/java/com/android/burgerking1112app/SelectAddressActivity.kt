@@ -1,5 +1,6 @@
 package com.android.burgerking1112app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,6 +31,9 @@ class SelectAddressActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+
+        val discount = intent.getDoubleExtra("discount", 0.00)
+
         val currentUser = auth.currentUser
         if (currentUser == null) {
             val intent = Intent(this, LoginActivity::class.java)
@@ -46,10 +50,10 @@ class SelectAddressActivity : AppCompatActivity() {
             finish()
         }
 
-        getAddresses(currentUser!!.uid)
+        getAddresses(currentUser!!.uid, discount)
     }
 
-    private fun getAddresses(userId: String){
+    private fun getAddresses(userId: String,discount: Double){
         var addressList = arrayListOf<Address>()
         var itemsRef = database.reference.child("addresses").child(userId)
 
@@ -63,7 +67,7 @@ class SelectAddressActivity : AppCompatActivity() {
                         Log.d("Address", addressData.toString())
                     }
                 }
-                view.rvAddresses.adapter = AddressAdapter(this@SelectAddressActivity, addressList)
+                view.rvAddresses.adapter = AddressAdapter(this@SelectAddressActivity,this@SelectAddressActivity, addressList, discount)
                 view.rvAddresses.layoutManager =
                     LinearLayoutManager(this@SelectAddressActivity, LinearLayoutManager.VERTICAL, false)
             }

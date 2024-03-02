@@ -30,6 +30,11 @@ class FragmentMore: Fragment() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
         }
+
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            view.tvEmail.text = currentUser.email
+        }
         return view.root
 
     }

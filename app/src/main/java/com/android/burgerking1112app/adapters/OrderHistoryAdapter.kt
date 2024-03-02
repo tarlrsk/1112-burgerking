@@ -10,11 +10,15 @@ import com.android.burgerking1112app.OrderStatusActivity
 import com.android.burgerking1112app.PaymentActivity
 import com.android.burgerking1112app.databinding.OrderHistoryItemBinding
 import com.android.burgerking1112app.databinding.OrderSummaryItemBinding
+import com.android.burgerking1112app.models.Order
 import com.android.burgerking1112app.models.OrderHistory
 import com.android.burgerking1112app.models.OrderSummary
 import com.google.firebase.storage.FirebaseStorage
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-class OrderHistoryAdapter (private val context: Context, private val orders: List<OrderHistory>)
+class OrderHistoryAdapter (private val context: Context, private val orders: List<Order>)
     : RecyclerView.Adapter<OrderHistoryAdapter.RecyclerViewHolder>()   {
     class RecyclerViewHolder(val binding: OrderHistoryItemBinding): RecyclerView.ViewHolder(binding.root)
     private val storage = FirebaseStorage.getInstance()
@@ -29,13 +33,17 @@ class OrderHistoryAdapter (private val context: Context, private val orders: Lis
     override fun onBindViewHolder(holder: OrderHistoryAdapter.RecyclerViewHolder, position: Int) {
         val order = orders[position]
 
-        holder.binding.tvDateTime.text = order.date.toString()
-        holder.binding.tvOrderStatusData.text = order.status.toString()
-        holder.binding.tvOrderId.text = order.orderId.toString()
-        holder.binding.tvAddress.text = order.address.toString()
+        val orderAt = LocalDateTime.parse(order.orderAt)
+        val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm")
+
+        holder.binding.tvDateTime.text = orderAt.format(formatter)
+        holder.binding.tvOrderStatusData.text = order.status!!.status
+        holder.binding.tvOrderId.text = order.orderNo.toString()
+        holder.binding.tvAddress.text = order.deliveryTo.toString()
 
         holder.binding.orderBox.setOnClickListener{
             val intent = Intent(context, OrderStatusActivity::class.java)
+            intent.putExtra("orderId", order.orderNo)
             context.startActivity(intent)
         }
     }

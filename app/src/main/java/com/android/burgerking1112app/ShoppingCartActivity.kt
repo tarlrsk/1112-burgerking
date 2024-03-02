@@ -50,6 +50,7 @@ class ShoppingCartActivity : AppCompatActivity() {
         var totalPrice: Double = 0.0
         var shippingPrice = 19
         var codeUsed = false
+        var discountP: Double = 0.00
 
         itemsRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -82,6 +83,7 @@ class ShoppingCartActivity : AppCompatActivity() {
                 totalPrice *= (1.00 - 0.05)
                 totalPrice += shippingPrice
                 view.tvTotalPrice.text = "฿ ${totalPrice.roundToLong()}"
+                discountP = 0.05
                 codeUsed = true
             } else if (code.uppercase() == "DISCOUNT5" && codeUsed) {
                 Toast.makeText(
@@ -99,6 +101,7 @@ class ShoppingCartActivity : AppCompatActivity() {
         view.btnCheckOut.setOnClickListener {
             val intent = Intent(this, PaymentActivity::class.java)
             intent.putExtra("totalPrice", totalPrice.roundToLong());
+            intent.putExtra("discount", discountP)
             startActivity(intent)
         }
 

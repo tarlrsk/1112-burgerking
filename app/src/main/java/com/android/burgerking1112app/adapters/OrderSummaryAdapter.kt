@@ -27,7 +27,7 @@ class OrderSummaryAdapter (private val context: Context, private val menus: List
 
         holder.binding.tvAmountOfProduct.text = menu.quantity.toString()
         holder.binding.tvMenuName.text = menu.name.toString()
-        holder.binding.tvPricePerPiece.text = menu.price.toString()
+        holder.binding.tvPricePerPiece.text = (menu.price!! * menu.quantity!!).toString()
 
     }
 }

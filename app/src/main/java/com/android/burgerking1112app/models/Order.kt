@@ -1,10 +1,15 @@
 package com.android.burgerking1112app.models
 
+import com.android.burgerking1112app.constant.OrderStatus
+import java.time.LocalDateTime
+
 data class Order(
-    val OrderNo: String? = null,
-    val OrderAt: String? = null,
-    val Status: String? = null,
-    val DeliveryTo: String? = null,
-    val Items: List<OrderSummary>? = null,
-    val Discount: Long? = null,
+    val orderNo: String? = null,
+    val orderAt: String? = null,
+    val status: OrderStatus? = null,
+    val deliveryTo: String? = null,
+    val totalDiscount: Double? = null,
+    val deliveryFee: Long? = null,
+    val subTotal: Double? = null,
+    val totalPrice: Double? = null,
 )

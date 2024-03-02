@@ -90,10 +90,34 @@
                 <RelativeLayout
                     android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOrderDetails" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvOrderDetails">
+
+                    <com.kofigyan.stateprogressbar.StateProgressBar
+                        android:id="@+id/status_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="15dp"
+                        app:spb_animateToCurrentProgressState="true"
+                        app:spb_checkStateCompleted="true"
+                        app:spb_currentStateDescriptionColor="@color/green"
+                        app:spb_currentStateNumber="three"
+                        app:spb_maxStateNumber="four"
+                        app:spb_stateBackgroundColor="#BDBDBD"
+                        app:spb_stateDescriptionColor="#808080"
+                        app:spb_stateForegroundColor="@color/green"
+                        app:spb_stateNumberBackgroundColor="#808080"
+                        app:spb_stateNumberForegroundColor="#eeeeee" />
+                </RelativeLayout>
 
                 <TextView
                     android:id="@+id/tvOrderNumberTitle"
@@ -321,6 +345,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
+                    android:id="@+id/tvGreenTotalPriceData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="฿ 169"
@@ -393,7 +418,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSubtotalTitle" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/tvDeliveryFeeData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="฿ 19"
@@ -422,7 +447,7 @@
                 android:textColor="@color/gray"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTotalDiscountTitle"
-                app:layout_constraintEnd_toEndOf="@+id/textView16"
+                app:layout_constraintEnd_toEndOf="@+id/tvDeliveryFeeData"
                 app:layout_constraintTop_toBottomOf="@+id/tvDeliveryFeeTitle" />
 
             <TextView
@@ -437,6 +462,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvTotalDiscountTitle" />
 
             <TextView
+                android:id="@+id/tvTotalPriceData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="฿ 193"
