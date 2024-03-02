@@ -14,7 +14,7 @@ import com.google.firebase.storage.FirebaseStorage
 
 
 
-class PromoAdapter(private val context: Context, private val promos: List<PromoMenu>,private val firebaseDatabase: FirebaseDatabase, private val userId: String)
+class PromoAdapter(private val context: Context, private val promos: List<PromoMenu>,private val firebaseDatabase: FirebaseDatabase, private val userId: String,private val existingCartItem: ArrayList<CartItem>)
     : RecyclerView.Adapter<PromoAdapter.RecyclerViewHolder>() {
     class RecyclerViewHolder(val binding: HorizonPromoMenuItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -45,9 +45,22 @@ class PromoAdapter(private val context: Context, private val promos: List<PromoM
         holder.binding.tvPromoPrice.text = "฿ " + promo.promoPrice.toString()
 
         holder.binding.btnPromoSelect.setOnClickListener  {
-            val cartRef = firebaseDatabase.reference.child("carts").child(userId).push()
-            val item = CartItem(cartRef.key,promo.id,promo.promoDescription, promo.promoPrice, promo.imgPath, 1)
-            cartRef.setValue(item)
+            val cartRef = firebaseDatabase.reference.child("carts").child(userId)
+            var isFound = false
+            for (cartItem in existingCartItem) {
+                if (cartItem.productId == promo.id) {
+                    cartItem.quantity = cartItem.quantity?.plus(1)
+                    cartRef.child(cartItem.id.toString()).setValue(cartItem)
+                    isFound = true
+                    break
+                }
+            }
+            if (!isFound) {
+                val newCartRef = cartRef.push()
+                val item =
+                    CartItem(newCartRef.key, promo.id, promo.promoDescription, promo.promoPrice, promo.imgPath, 1)
+                newCartRef.setValue(item)
+            }
         }
     }
 }

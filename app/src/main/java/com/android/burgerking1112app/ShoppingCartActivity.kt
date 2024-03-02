@@ -62,7 +62,7 @@ class ShoppingCartActivity : AppCompatActivity() {
                 }
 
                 totalPrice += shippingPrice
-                view.rvListSelectedmenu.adapter = ShoppingCartAdapter(this@ShoppingCartActivity, cartItems)
+                view.rvListSelectedmenu.adapter = ShoppingCartAdapter(this@ShoppingCartActivity, cartItems,database, userId)
                 view.rvListSelectedmenu.layoutManager = LinearLayoutManager(this@ShoppingCartActivity, LinearLayoutManager.VERTICAL, false)
                 view.tvTotalPrice.text = "฿ ${totalPrice.roundToLong()}"
                 codeUsed = false

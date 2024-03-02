@@ -45,11 +45,15 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(intent)
                             finish()
                         } else {
+                            var message = task.exception?.message
+                            if(message == "The supplied auth credential is incorrect, malformed or has expired."){
+                                message = "Your email or password is invalid."
+                            }
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.exception)
                             Toast.makeText(
                                 baseContext,
-                                task.exception?.message,
+                                message,
                                 Toast.LENGTH_SHORT,
                             ).show()
                         }
