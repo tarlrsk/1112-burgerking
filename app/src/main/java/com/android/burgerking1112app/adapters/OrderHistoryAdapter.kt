@@ -1,9 +1,13 @@
 package com.android.burgerking1112app.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.android.burgerking1112app.OrderStatusActivity
+import com.android.burgerking1112app.PaymentActivity
 import com.android.burgerking1112app.databinding.OrderHistoryItemBinding
 import com.android.burgerking1112app.databinding.OrderSummaryItemBinding
 import com.android.burgerking1112app.models.OrderHistory
@@ -30,5 +34,9 @@ class OrderHistoryAdapter (private val context: Context, private val orders: Lis
         holder.binding.tvOrderId.text = order.orderId.toString()
         holder.binding.tvAddress.text = order.address.toString()
 
+        holder.binding.orderBox.setOnClickListener{
+            val intent = Intent(context, OrderStatusActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 }
