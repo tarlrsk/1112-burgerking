@@ -90,10 +90,34 @@
                 <RelativeLayout
                     android:id="@+id/relativeLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvOrderDetails" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvOrderDetails">
+
+                    <com.kofigyan.stateprogressbar.StateProgressBar
+                        android:id="@+id/status_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="15dp"
+                        app:spb_animateToCurrentProgressState="true"
+                        app:spb_checkStateCompleted="true"
+                        app:spb_currentStateDescriptionColor="@color/green"
+                        app:spb_currentStateNumber="three"
+                        app:spb_maxStateNumber="four"
+                        app:spb_stateBackgroundColor="#BDBDBD"
+                        app:spb_stateDescriptionColor="#808080"
+                        app:spb_stateForegroundColor="@color/green"
+                        app:spb_stateNumberBackgroundColor="#808080"
+                        app:spb_stateNumberForegroundColor="#eeeeee" />
+                </RelativeLayout>
 
                 <TextView
                     android:id="@+id/tvOrderNumberTitle"
@@ -260,79 +284,100 @@
 <!--                    android:layout_marginBottom="15dp"-->
 <!--                    android:src="@drawable/white_box_order_summary" />-->
 
-
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/ic_burgerking_company_logo_foreground"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDeliveryTimeTitle" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvOrderSummary"
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_bg"
+                android:paddingBottom="12dp"
+                android:clipToPadding="false"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+                    android:layout_marginTop="15dp"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="34dp"
+                    android:elevation="2dp"
+                    android:background="@drawable/white_round_bg"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/tvDiscountLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Discount"
-                    android:textColor="@color/green"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="@+id/imageView9"
-                    app:layout_constraintTop_toBottomOf="@+id/rvOrderSummary"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"/>
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/ic_burgerking_company_logo_foreground"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvDiscount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="฿ 0"
-                    android:textColor="@color/green"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvDiscountLabel"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/tvDiscountLabel"
-                    android:layout_marginRight="35dp" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvOrderSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+                        android:nestedScrollingEnabled="true"/>
 
-                <TextView
-                    android:id="@+id/tvTotalLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="TOTAL"
-                    android:textColor="@color/green"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tvDiscountLabel"
-                    app:layout_constraintTop_toBottomOf="@+id/tvDiscountLabel"
-                    app:layout_constraintVertical_bias="0.0" />
+                    <TextView
+                        android:id="@+id/tvDiscountLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Discount"
+                        android:textColor="@color/green"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@+id/imageView9"
+                        app:layout_constraintTop_toBottomOf="@+id/rvOrderSummary" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="฿ 169"
-                    android:textColor="@color/green"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/tvTotalLabel"
-                    app:layout_constraintEnd_toEndOf="@+id/tvDiscount"
-                    app:layout_constraintTop_toTopOf="@+id/tvTotalLabel"
-                    app:layout_constraintVertical_bias="0.0" />
+                    <TextView
+                        android:id="@+id/tvDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="35dp"
+                        android:text="฿ 0"
+                        android:textColor="@color/green"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDiscountLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvDiscountLabel" />
 
+                    <TextView
+                        android:id="@+id/tvTotalLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="TOTAL"
+                        android:textColor="@color/green"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvDiscountLabel"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDiscountLabel"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/tvGreenTotalPriceData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="฿ 169"
+                        android:textColor="@color/green"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvTotalLabel"
+                        app:layout_constraintEnd_toEndOf="@+id/tvDiscount"
+                        app:layout_constraintTop_toTopOf="@+id/tvTotalLabel"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
 
@@ -393,7 +438,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSubtotalTitle" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/tvDeliveryFeeData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="฿ 19"
@@ -422,7 +467,7 @@
                 android:textColor="@color/gray"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTotalDiscountTitle"
-                app:layout_constraintEnd_toEndOf="@+id/textView16"
+                app:layout_constraintEnd_toEndOf="@+id/tvDeliveryFeeData"
                 app:layout_constraintTop_toBottomOf="@+id/tvDeliveryFeeTitle" />
 
             <TextView
@@ -437,6 +482,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvTotalDiscountTitle" />
 
             <TextView
+                android:id="@+id/tvTotalPriceData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="฿ 193"

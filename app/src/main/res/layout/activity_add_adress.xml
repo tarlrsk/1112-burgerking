@@ -8,11 +8,11 @@
     tools:context=".UpdateAddressActivity">
 
     <TextView
-        android:id="@+id/tvUpdateAddressTitle"
+        android:id="@+id/tvAddAddressTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Update Address"
+        android:text="Add Address"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,9 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:src="@drawable/baseline_arrow_back_black_ios_24"
-        app:layout_constraintBottom_toBottomOf="@+id/tvUpdateAddressTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAddAddressTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvUpdateAddressTitle" />
+        app:layout_constraintTop_toTopOf="@+id/tvAddAddressTitle" />
 
 
     <TextView
@@ -50,13 +50,13 @@
         android:layout_marginTop="60dp"
         android:layout_marginRight="20dp"
         android:contextClickable="true"
-        android:ems="10"
         android:inputType="number"
         android:textAllCaps="false"
         android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="@+id/tvUpdateAddressTitle"
-        app:layout_constraintStart_toStartOf="@+id/tvUpdateAddressTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvUpdateAddressTitle" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvAddAddressTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvAddAddressTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddAddressTitle" />
 
     <TextView
         android:id="@+id/tvAddressName"
@@ -66,7 +66,7 @@
         android:text="Address Name"
         android:textColor="@color/gray"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/editAddressName"
+        app:layout_constraintStart_toStartOf="@+id/tvPhoneNumber"
         app:layout_constraintTop_toTopOf="@+id/editAddressName" />
 
     <EditText
@@ -79,7 +79,9 @@
         android:contextClickable="true"
         android:textAllCaps="false"
         android:textColor="#000000"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/editPhoneNumber"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editPhoneNumber"
         app:layout_constraintTop_toBottomOf="@+id/editPhoneNumber" />
 
@@ -87,10 +89,11 @@
         android:id="@+id/tvAddBuildingNotice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:text="e.g. Home, office, building name"
         android:textColor="@color/gray"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/editAddressName"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editAddressName" />
 
     <TextView
@@ -101,7 +104,7 @@
         android:text="Address Information"
         android:textColor="@color/gray"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/editAddressInfo"
+        app:layout_constraintStart_toStartOf="@+id/tvAddressName"
         app:layout_constraintTop_toTopOf="@+id/editAddressInfo" />
 
     <EditText
@@ -113,6 +116,7 @@
         android:layout_marginRight="20dp"
         android:contextClickable="true"
         android:textAllCaps="false"
+        android:textSize="12sp"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/editAddressName"
         app:layout_constraintStart_toStartOf="@+id/editAddressName"
@@ -127,7 +131,7 @@
         android:layout_marginRight="20dp"
         android:contextClickable="true"
         android:hint="Note To Driver"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textAllCaps="false"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/editAddressInfo"
@@ -141,19 +145,19 @@
         android:text="Let driver know what to do when arrives"
         android:textColor="@color/gray"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/editNoteToDriver"
+        app:layout_constraintStart_toStartOf="@+id/tvAddressInfo"
         app:layout_constraintTop_toBottomOf="@+id/editNoteToDriver" />
 
     <TextView
         android:id="@+id/tvLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="Label(Optional)"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/editNoteToDriver"
-        app:layout_constraintTop_toBottomOf="@+id/editNoteToDriver"
-        android:layout_marginTop="40dp"/>
+        app:layout_constraintStart_toStartOf="@+id/tvToDriverNotice"
+        app:layout_constraintTop_toBottomOf="@+id/editNoteToDriver" />
 
     <TextView
         android:id="@+id/tvGiveLabel"
@@ -173,9 +177,9 @@
         android:layout_marginTop="15dp"
         android:backgroundTint="@color/white"
         android:text="Home"
-        android:textStyle="bold"
         android:textColor="@color/gray"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:icon="@drawable/ic_home"
         app:iconPadding="4dp"
         app:iconTint="@color/gray"
@@ -204,10 +208,10 @@
         app:strokeWidth="1sp" />
 
     <Button
-        android:id="@+id/btnUpdateAddress"
+        android:id="@+id/btnAddAddress"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Update"
+        android:text="Add"
         android:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
