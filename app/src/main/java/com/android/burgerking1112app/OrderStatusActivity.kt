@@ -34,6 +34,9 @@ class OrderStatusActivity : AppCompatActivity() {
         view.rvOrderSummary.adapter = OrderSummaryAdapter(this, orderSummary)
         view.rvOrderSummary.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+        view.icBackArrow.setOnClickListener {
+            finish();
+        }
     }
 
 
