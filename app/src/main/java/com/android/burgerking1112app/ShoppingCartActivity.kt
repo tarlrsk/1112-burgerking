@@ -54,8 +54,10 @@ class ShoppingCartActivity : AppCompatActivity() {
 
         itemsRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                discountP = 0.00
                 totalPrice = 0.0
                 cartItems.clear()
+                codeUsed = false
                 if(snapshot.exists()){
                     for(cartSnap in snapshot.children){
                         val cartItemData = cartSnap.getValue(CartItem::class.java)

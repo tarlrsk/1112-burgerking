@@ -148,7 +148,7 @@
                             android:id="@+id/imageView7"
                             android:layout_width="match_parent"
                             android:layout_height="120dp"
-                            android:src="@drawable/hatyai_promo"
+                            android:src="@drawable/cheesy_menu"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,7 +157,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Hat Yai Chicken King Set"
+                            android:text="Cheesy Chic'N Burger"
                             android:textSize="14sp"
                             app:layout_constraintStart_toStartOf="@+id/imageView7"
                             app:layout_constraintTop_toBottomOf="@+id/imageView7" />
@@ -167,7 +167,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="฿ 169"
+                            android:text="฿ 89"
                             android:textColor="@color/green"
                             android:textSize="14sp"
                             android:textStyle="bold"
